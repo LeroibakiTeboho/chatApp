@@ -17,21 +17,27 @@ const registerUser = async (req, res) => {
 
     // Check if all fields are provided
     if (!name || !email || !password) {
-      return res.status(400).json("All fields are required");
+      return res
+        .status(400)
+        .json({ error: true, message: "All fields are required" });
     }
 
     // Validate email and password strength
     if (!validator.isEmail(email)) {
-      return res.status(400).json("Invalid email");
+      return res.status(400).json({ error: true, message: "Invalid email" });
     }
     if (!validator.isStrongPassword(password)) {
-      return res.status(400).json("Strong password is required");
+      return res
+        .status(400)
+        .json({ error: true, message: "Strong password is required" });
     }
 
     // Check if the user already exists
     let existingUser = await userModel.findOne({ email });
     if (existingUser) {
-      return res.status(400).json("User already exists");
+      return res
+        .status(400)
+        .json({ error: true, message: "User already exists" });
     }
 
     // Hash the password
@@ -42,25 +48,22 @@ const registerUser = async (req, res) => {
     const newUser = await userModel.create({
       name,
       email,
-      password: hashedPassword
+      password: hashedPassword,
     });
 
     // Generate a JWT token
     const token = createToken(newUser._id);
 
-    res.status(201).json({ 
-      _id: newUser._id, 
-      name: newUser.name, 
-      email: newUser.email, 
-      token 
+    res.status(201).json({
+      _id: newUser._id,
+      name: newUser.name,
+      email: newUser.email,
+      token,
     });
-
   } catch (error) {
     console.log(error);
-    res.status(500).json("Server error");
+    res.status(500).json({ error: true, message: "Server error" });
   }
 };
 
-
-
-module.exports = {registerUser} ;
+module.exports = { registerUser };

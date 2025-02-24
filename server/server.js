@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("Welcome our chat app APIs...");
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 const uri = process.env.ATLAS_URI;
 
 app.listen(port, (req, res) => {
@@ -26,3 +26,6 @@ mongoose
   .connect(uri)
   .then(() => console.log("MongoDB connection successful"))
   .catch((error) => console.log("mongoDB connection failed: ", error.message));
+
+
+  

@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+/node_modules
 
 # Environment variables
 .env
@@ -8,9 +9,9 @@ node_modules/
 *.log
 
 # Build files
-client/build/
-server/dist/
-socket/dist/
+/client/build/
+/server/dist/
+/socket/dist/
 
 # IDE-specific files
 .vscode/
