@@ -3,7 +3,7 @@ import React from "react";
 
 const LoginPage = () => {
   return (
-    <div className="h-full flex items-center justify-center overflow-hidden">
+    <div className="container flex items-center justify-center">
       <div className="w-full max-w-sm bg-base-100 rounded-md shadow-md p-8 border border-accent/20 mx-4">
         <h2 className="text-2xl font-bold text-neutral mb-4 text-center">
           Welcome Back to TalkSpace

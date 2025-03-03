@@ -5,8 +5,8 @@ import Link from "next/link";
 const NavbarComponent = () => {
   return (
     <header className="bg-accent text-base-100 p-4">
-      <Container>
-        <div className="flex justify-between items-center">
+      {/* <Container> */}
+        <div className="container flex justify-between items-center">
           <Link href="/">
             <h1 className="text-xl font-bold">TalkSpace</h1>
           </Link>
@@ -22,7 +22,7 @@ const NavbarComponent = () => {
             </Link>
           </nav>
         </div>
-      </Container>
+      {/* </Container> */}
     </header>
   );
 };

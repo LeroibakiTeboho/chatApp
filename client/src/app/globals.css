@@ -101,3 +101,8 @@ body {
 .delay-200 {
   animation-delay: 0.2s;
 }
+
+.container {
+  max-width: 1300px;
+  margin-inline: auto;
+}

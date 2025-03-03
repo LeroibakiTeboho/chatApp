@@ -27,11 +27,7 @@ export default function RootLayout({ children }) {
       >
         <NavbarComponent />
         <main className="flex-1 flex">
-          <Container>
-            {/* <div className="bg-black w-full flex flex-col flex-1 px-4 sm:px-6 lg:px-8"> */}
-            <AuthContextProvider>{children}</AuthContextProvider>
-            {/* </div> */}
-          </Container>
+          <AuthContextProvider>{children}</AuthContextProvider>
         </main>
       </body>
     </html>

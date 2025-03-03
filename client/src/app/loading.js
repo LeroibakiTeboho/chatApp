@@ -34,7 +34,7 @@ const Loading = () => {
   }, [router]);
 
   return (
-    <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10">
+    <div className="container flex items-center justify-center ">
       <div className="text-center space-y-6">
         {/* Animated Spinner */}
         <div className="relative w-20 h-20 mx-auto">
